@@ -32,6 +32,9 @@
 		0F89E0B629EF267800532A27 /* ArticlePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89E0B529EF267800532A27 /* ArticlePage.swift */; };
 		0F89E0B829EF268400532A27 /* ArticlePage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89E0B729EF268400532A27 /* ArticlePage2.swift */; };
 		0F89E0BA29EF26C100532A27 /* LearnMoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89E0B929EF26C100532A27 /* LearnMoreButton.swift */; };
+		0F89E0BE29EF3D8300532A27 /* AIPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89E0BD29EF3D8300532A27 /* AIPage.swift */; };
+		0F89E0C029EF3DB200532A27 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89E0BF29EF3DB200532A27 /* OpenAIService.swift */; };
+		0F89E0C229EF3DCF00532A27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89E0C129EF3DCF00532A27 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		0F89E0B529EF267800532A27 /* ArticlePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePage.swift; sourceTree = "<group>"; };
 		0F89E0B729EF268400532A27 /* ArticlePage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePage2.swift; sourceTree = "<group>"; };
 		0F89E0B929EF26C100532A27 /* LearnMoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreButton.swift; sourceTree = "<group>"; };
+		0F89E0BD29EF3D8300532A27 /* AIPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPage.swift; sourceTree = "<group>"; };
+		0F89E0BF29EF3DB200532A27 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		0F89E0C129EF3DCF00532A27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,9 @@
 		0F89E08F29EF1E4000532A27 /* AI */ = {
 			isa = PBXGroup;
 			children = (
+				0F89E0BD29EF3D8300532A27 /* AIPage.swift */,
+				0F89E0BF29EF3DB200532A27 /* OpenAIService.swift */,
+				0F89E0C129EF3DCF00532A27 /* Constants.swift */,
 			);
 			path = AI;
 			sourceTree = "<group>";
@@ -341,9 +350,11 @@
 				0F89E09529EF1E9200532A27 /* PrimaryButton.swift in Sources */,
 				0F89E0B229EF262200532A27 /* HomePage.swift in Sources */,
 				0F89E0B829EF268400532A27 /* ArticlePage2.swift in Sources */,
+				0F89E0C029EF3DB200532A27 /* OpenAIService.swift in Sources */,
 				0F89E0BA29EF26C100532A27 /* LearnMoreButton.swift in Sources */,
 				0F89E09329EF1E7F00532A27 /* AnswerRow.swift in Sources */,
 				0F89E0A529EF1EFA00532A27 /* Answer.swift in Sources */,
+				0F89E0C229EF3DCF00532A27 /* Constants.swift in Sources */,
 				0F89E0B429EF264800532A27 /* profilepicture.swift in Sources */,
 				0F89E09B29EF1EC400532A27 /* HomeView.swift in Sources */,
 				0F89E0B029EF25CA00532A27 /* LogInPage.swift in Sources */,
@@ -351,6 +362,7 @@
 				0F89E09D29EF1ECD00532A27 /* QuestionView.swift in Sources */,
 				0F89E0B629EF267800532A27 /* ArticlePage.swift in Sources */,
 				0F89E0A129EF1EE600532A27 /* QuestionManager.swift in Sources */,
+				0F89E0BE29EF3D8300532A27 /* AIPage.swift in Sources */,
 				0F89E06529EF1E2100532A27 /* NRFHApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
