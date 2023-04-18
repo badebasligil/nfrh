@@ -16,8 +16,8 @@ struct HomePage: View {
     @State private var wrongPassword = 0
     @State private var showinghome = false
     @State var isMenuExpanded = false
-    @State var deneme: Bool = false
-    
+    @State var showArticlePage = false
+    @State var showContentView = false
     var body: some View {
         ZStack {
             Color.white
@@ -71,20 +71,24 @@ struct HomePage: View {
                
             }
             if isMenuExpanded {
-                MenuView(isMenuExpanded: $isMenuExpanded, deneme: $deneme)
+                MenuView(isMenuExpanded: $isMenuExpanded, showArticlePage: $showArticlePage, showContentView: $showContentView)
             }
+            
         }
-        .overlay {
-            if let deneme = deneme {
-                ArticlePage()
-            }
+        .sheet(isPresented: $showArticlePage) {
+            ArticlePage(showArticlePage: $showArticlePage)
+        }
+        .fullScreenCover(isPresented: $showContentView) {
+            ContentView()
         }
     }
+        .navigationBarHidden(true)
 }
 
 struct MenuView: View {
     @Binding var isMenuExpanded: Bool
-    @Binding var deneme: Bool
+    @Binding var showArticlePage: Bool
+    @Binding var showContentView: Bool
     var body: some View {
         ZStack {
             Color.white
@@ -119,7 +123,8 @@ struct MenuView: View {
                 
                 Button(action: {
                     // Handle menu item action here
-                    self.deneme.toggle()
+                    self.showArticlePage.toggle()
+                    self.isMenuExpanded = false
                 }) {
                     Text("Article Page")
                         .font(.headline)
@@ -130,6 +135,7 @@ struct MenuView: View {
                 
                 Button(action: {
                     // Handle menu item action here
+                    self.showContentView.toggle()
                 }) {
                     Text("Game Page")
                         .font(.headline)
@@ -138,23 +144,6 @@ struct MenuView: View {
                 }
                 
                 
-                Button(action: {
-                    // Handle menu item action here
-                }) {
-                    Text("Chat AI")
-                        .font(.headline)
-                        .foregroundColor(.black)
-                        .padding(.vertical, 10)
-                }
-                
-                Button(action: {
-                    // Handle menu item action here
-                }) {
-                    Text("Home Page")
-                        .font(.headline)
-                        .foregroundColor(.black)
-                        .padding(.vertical, 10)
-                }
                 
                 .padding(.bottom, 350)
                 

@@ -12,15 +12,15 @@ struct ArticlePage: View {
     
     
     @State private var isMenuExpanded = false
-    
-    
+    @Binding var showArticlePage: Bool
+    @State var activeLearnMore = false
     var body: some View {
         ZStack {
             Color.white
             
             VStack {
                 
-                
+                /*
                 HStack {
                     Button(action: {
                         self.isMenuExpanded.toggle()
@@ -34,6 +34,7 @@ struct ArticlePage: View {
                     Spacer()
                 }
                 .padding()
+                */
                 
                 Spacer()
                 
@@ -56,17 +57,18 @@ struct ArticlePage: View {
                         
                         
                         VStack {
-                            NavigationLink(destination: ArticlePage2()){
-                                Button("Learn More") {
+                            Button {
+                                withAnimation {
+                                    self.activeLearnMore = true
                                 }
-                                .foregroundColor(.white)
-                                .frame(width:150, height:50)
-                                .cornerRadius(10)
-                                .background(.linearGradient(colors: [.orange, .yellow], startPoint: .top, endPoint: .bottomTrailing))
-                                .cornerRadius(30)
+                            } label: {
+                                Text("Learn More")
+                                    .foregroundColor(.white)
+                                    .frame(width:150, height:50)
+                                    .cornerRadius(10)
+                                    .background(.linearGradient(colors: [.orange, .yellow], startPoint: .top, endPoint: .bottomTrailing))
+                                    .cornerRadius(30)
                             }
-                            
-                            
                         }
                     }
                 }
@@ -74,6 +76,9 @@ struct ArticlePage: View {
                 if isMenuExpanded {
                     MenuView(isMenuExpanded: $isMenuExpanded)
                 }
+            }
+            .sheet(isPresented: $activeLearnMore) {
+                ArticlePage2()
             }
         }
     }
@@ -166,7 +171,7 @@ struct ArticlePage: View {
     
     struct ArticlePage_Previews: PreviewProvider {
         static var previews: some View {
-            ArticlePage()
+            ArticlePage(showArticlePage: .constant(false))
         }
     }
     

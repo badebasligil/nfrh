@@ -62,7 +62,7 @@ struct SignUp: View {
                         .cornerRadius(10)
                    
                     VStack {
-                        NavigationLink(destination: profilepicture()){
+                        NavigationLink(destination: HomePage()){
                             Button("Sign Up") {
                             }
                                 .foregroundColor(.white)

@@ -19,7 +19,7 @@ struct ArticlePage2: View {
             
             VStack {
                 
-                        
+                        /*
                         HStack {
                             Button(action: {
                                 self.isMenuExpanded.toggle()
@@ -33,7 +33,7 @@ struct ArticlePage2: View {
                             Spacer()
                         }
                         .padding()
-                        
+                        */
                         Spacer()
                 
                 ScrollView {

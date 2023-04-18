@@ -23,7 +23,7 @@ struct AnswerRow: View {
             if isSelected {
                 Spacer()
                 
-                Image(systemName: answer.isCorrect ? "checkmark.cricle.fill" : "xmark.circle.fill" )
+                Image(systemName: answer.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill" )
                     .foregroundColor(answer.isCorrect ? Color.green : Color.red)
             }
         }

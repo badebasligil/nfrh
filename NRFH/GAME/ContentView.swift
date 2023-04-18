@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var questionManager = QuestionManager()
-    
+    @State var showHomePage = false
     var body: some View {
         NavigationView {
             VStack(spacing: 40) {
@@ -37,10 +37,16 @@ struct ContentView: View {
       
                 }
                 
+                NavigationLink {
+                    HomePage()
+                } label: {
+                    PrimaryButton(text: "Home Page")
+                }
+                
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .edgesIgnoringSafeArea(.all)
-        .background(.gray.opacity(0.2))
+            .background(.gray.opacity(0.2))
         }
     }
 }
